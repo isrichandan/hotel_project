@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>user:</strong>
+  <%= @booking.user %>
+</p>
+
+<p>
+  <strong>arriving_date:</strong>
+  <%= @booking.arriving_date %>
+</p>
+
+<p>
+  <strong>leaving_date:</strong>
+  <%= @booking.leaving_date %>
+</p>
+
+
+<p>
+  <strong>room_id:</strong>
+  <%= @booking.room_id %>
+</p>
+
+<p>
+  <strong>user_id:</strong>
+  <%= @booking.user_id %>
+</p>
+
+<p>
+  <strong>created_at:</strong>
+  <%= @booking.created_at %>
+</p>
+
+<p>
+  <strong>updated_at:</strong>
+  <%= @booking.updated_at %>
+</p>
+<% if @booking.main_image.present? %>
+URL: <%= url_for(@booking.main_image) %>
+<br>
+<%= link_to 'Download image', rails_blob_url(@booking.main_image, disposition: "attachment") %>
+<br>
+
+main:<%= image_tag @booking.main_image %>
+<br>
+
+Thumb:<%= image_tag @booking.main_image.variant(:thumb) %>
+<br>
+
+Medium:<%= image_tag @booking.main_image.variant(:medium) %>
+
+<% end %>
+<br>
+
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>

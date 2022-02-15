@@ -1,0 +1,47 @@
+<body style="background-color:powderblue;">
+<h1>Welcome To The Hotel</h1>
+  <div>
+     <%= form_tag bookings_path, method: 'get' do %>
+     Search (with form_tag):
+     <%= text_field_tag 'q', params[:q], placeholder: 'Search Booking by user_id' %>
+     <%= submit_tag "Search" %>
+     <%= link_to "Clear", bookings_path %>
+     <% end %> 
+  </div>   
+     <br>
+
+     <div>
+     <%= form_with url: bookings_path, method: 'get' do |f| %>
+     Search (with form_with):
+     <%= f.text_field :q, placeholder: 'Search Booking by user_id' %>
+     <%= f.submit "Search" %>
+     <%= link_to "Clear", bookings_path %>
+     <% end %> 
+  </div> 
+  <br>     
+
+<table>
+  <thead>
+    <tr>
+
+      <th>user_id</th>
+      <th>arriving_date</th>
+       <th>leaving_date</th>
+       
+        <th>actions</th>
+
+    
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= render @bookings %>
+
+    
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>
+</body>

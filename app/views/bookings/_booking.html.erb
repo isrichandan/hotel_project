@@ -1,0 +1,13 @@
+<tr>
+        <td><%= booking.user %></td>
+        <td><%= booking.arriving_date %></td>
+        <td><%= booking.leaving_date %></td>
+
+        
+        <td>
+        <%= link_to 'Edit', edit_booking_path(booking) %>
+        <%= link_to 'Show', booking_path(booking) %>
+        <%= link_to 'Destroy', booking_path(booking), method: :delete, data: { confirm: 'are you sure?'} %>
+        <%= link_to 'Download PDF', download_pdf_booking_path(booking) %>
+        </td>
+</tr>

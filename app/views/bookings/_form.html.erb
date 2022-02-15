@@ -1,0 +1,43 @@
+
+<%= form_for @booking do |f| %>
+    
+<div>
+<%= f.label :user %>
+<%= f.text_field :user %>
+</div>
+<div>
+<%= f.label :arriving_date %>
+<%= f.date_field :arriving_date %>
+</div>
+<div>
+<%= f.label :leaving_date %>
+<%= f.date_field :leaving_date%>
+</div>
+<div>
+<%= f.label :breakfast %>
+<%= f.check_box :breakfast %>
+</div>
+<div>
+<%= f.label :room_id %>
+<%= f.text_field :room_id %>
+</div>
+<div>
+<%= f.label :user_id %>
+<%= f.text_field :user_id %>
+</div>
+
+
+
+
+  
+    <div class="field">
+      <%= f.label :main_image %>
+      <%= f.file_field :main_image %>
+    </div>
+  
+  
+    <div>
+<%= f.submit "create booking" %>
+</div>
+<% end %>
+  

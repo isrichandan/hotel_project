@@ -1,0 +1,11 @@
+<h1>hi</h1>
+<p>
+There is a new booking created.<br>
+</p>
+<p>
+User_id: <%= @booking.user_id %><br>
+Created_at: <%= @booking.created_at %><br>
+Updated_at: <%= @booking.updated_at %><br>
+To view the full booking details, <%= link_to "click here",booking_url(@booking), target: '_blank' %>,
+</p>
+<p>have a great day!</p>
